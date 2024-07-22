@@ -1,6 +1,6 @@
 <?php
 
-class Titulo {
+abstract class Titulo {
     private string $nome;
     private int $anoLancamento ;
     private string $genero;
@@ -37,7 +37,6 @@ class Titulo {
         return $this->genero;
     }
 
-    public function duracaoEmMinutos(): int {
-        return 0;
-    }
+    abstract function duracaoEmMinutos(): int;
+
 }

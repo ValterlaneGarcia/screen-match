@@ -1,11 +1,9 @@
 <?php
 
-require __DIR__ . "/src/Modelo/Genero.php";
-require __DIR__ . "/src/Modelo/Titulo.php";
-require __DIR__ . "/src/Modelo/Serie.php";
-require __DIR__ . "/src/Modelo/Episodio.php";
-require __DIR__ . "/src/Modelo/Filme.php";
-require __DIR__ . "/src/Calculos/CalculadoraDeMaratona.php";
+require 'autoload.php';
+
+use ScreenMatch\Modelo\{Filme, Episodio, serie, Genero};
+use ScreenMatch\Calculos\{CalculadoraMaratona, ConversorNotaEstrela};
 
 echo "Bem-vindo(a) ao ScreenMatch\n";
 
@@ -54,4 +52,9 @@ $calculadora->inclui($filme);
 $calculadora->inclui($serie);
 $duracao = $calculadora->duracao();
 
-echo "Para essa maratona, você precisa de $duracao minutos";
+echo "Para essa maratona, você precisa de $duracao minutos\n";
+
+$conversor = new ConversorNotaEstrela();
+echo $conversor->converte($serie) . "\n";
+echo $conversor->converte($filme) . "\n";
+

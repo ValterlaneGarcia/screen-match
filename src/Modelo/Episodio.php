@@ -1,13 +1,15 @@
 <?php 
+namespace ScreenMatch\Modelo;
 
-class Episodio {
+class Episodio implements Avaliavel{
 
-    public Serie $serie;
-    public string $nome;
-    public int $numero;
+    use ComAvaliacao;
 
-    public function __construct()
+
+    public function __construct(Serie $serie, string $nome, int $numero)
     {
-        
+
     }
+
+
 }

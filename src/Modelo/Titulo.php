@@ -3,10 +3,11 @@ namespace ScreenMatch\Modelo;
 
 
 abstract class Titulo implements Avaliavel {
+    
     private string $nome;
     private int $anoLancamento ;
     private string $genero;
-
+    
     use ComAvaliacao;
 
     public function __construct(string $nome, int $anoLancamento, string $genero)
@@ -28,6 +29,6 @@ abstract class Titulo implements Avaliavel {
         return $this->genero;
     }
 
-    abstract  function duracaoEmMinutos(): int;
+    abstract public function duracaoEmMinutos(): int;
 
 }
